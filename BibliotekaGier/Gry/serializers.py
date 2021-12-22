@@ -9,7 +9,7 @@ class GraSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Gry
-        fields = ['url', 'id', 'nazwaGry', 'kategoria','owner', 'dataWydania', 'producent', 'opis']
+        fields = ['url', 'id', 'nazwaGry', 'kategoria', 'owner', 'dataWydania', 'producent', 'opis']
 
 
 class KategoriaSerializer(serializers.HyperlinkedModelSerializer):
