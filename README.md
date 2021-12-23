@@ -8,6 +8,7 @@
 
 
 Projekt zawiera API, stworzone przy wykorzystaniu Django Rest Framework. Tematem jest biblioteka gier zawierająca:
+
 -Gry
 
 -Kategeorie Gier
