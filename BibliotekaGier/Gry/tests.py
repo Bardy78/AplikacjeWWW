@@ -74,19 +74,17 @@ class KategoriaGryTests(APITestCase):
         assert get_response.status_code == status.HTTP_200_OK
         assert get_response.data['nazwa'] == kategoria_gry_name
 
+
 # class GryTests(APITestCase):
 #     def create_kategoria_gry(self, client):
 #         url = reverse(views2.KategoriaGryList.name)
-#         data = {'nazwa': 'wyścigi'}
+#         data = {'id': 1, 'nazwa': 'wyścigi'}
 #         client.post(url, data, format='json')
 #
-#     def create_gry(self, nazwagry, kategoria, datawydania, producent, opis, owner, client):
-#         user = User.objects.create_superuser('admin1', 'admin@admin.com', 'admin123')
-#         client = APIClient()
-#         client.login(username='admin1', password='admin123')
+#     def create_gry(self, nazwagry, kategoria_gry, datawydania, producent, opis, owner, client):
 #         url = reverse(views2.GryList.name)
 #         data = {'nazwaGry': nazwagry,
-#                 'kategoria': kategoria,
+#                 'kategoria': kategoria_gry,
 #                 'dataWydania': datawydania,
 #                 'producent': producent,
 #                 'opis': opis,
@@ -95,19 +93,19 @@ class KategoriaGryTests(APITestCase):
 #         return response
 #
 #     def test_post_and_get_gry(self):
+#         user = User.objects.create_superuser('admin', 'admin@admin.com', 'admin123')
 #         client = APIClient()
 #         client.login(username='admin1', password='admin123')
 #         self.create_kategoria_gry(client)
 #         new_nazwagry = 'Counter-Strike 1.6'
-#         new_kategoria = 'FPS'
+#         new_kategoria_gry = 'FPS'
 #         new_datawydania = '2001-01-01'
 #         new_producent = 'Valve'
 #         new_opis = 'Taktyczna gra'
 #         new_owner = 'admin'
-#         response = self.create_gry(new_nazwagry, new_kategoria, new_datawydania, new_producent, new_opis, new_owner,
+#         response = self.create_gry(new_nazwagry, new_kategoria_gry, new_datawydania, new_producent, new_opis, new_owner,
 #                                    client)
-#         assert response.status_code == status.HTTP_400_BAD_REQUEST
+#         assert response.status_code == status.HTTP_201_CREATED
 #         assert Gry.objects().count == 1
 #         assert Gry.objects().get == new_nazwagry
 #         assert Gry.objects().get == new_producent
-#

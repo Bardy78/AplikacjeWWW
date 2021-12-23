@@ -36,7 +36,7 @@ class GryList(generics.ListCreateAPIView):
     filterset_fields = ['nazwaGry', 'kategoria']
     search_fields = ['nazwaGry']
     ordering_fields = ['nazwaGry', 'kategoria']
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly)
+    permission_classes = [permissions.DjangoModelPermissionsOrAnonReadOnly]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
